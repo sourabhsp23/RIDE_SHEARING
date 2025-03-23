@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI-Powered Ride-Sharing System</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 font-sans leading-normal tracking-normal">
+    <nav class="bg-gray-800 p-4 text-white">
+        <div class="container mx-auto flex flex-wrap items-center justify-between">
+            <div class="flex items-center flex-shrink-0 mr-6">
+                <span class="font-semibold text-xl tracking-tight">🚗 RideShare AI</span>
+            </div>
+            <div class="block lg:hidden">
+                <button class="flex items-center px-3 py-2 border rounded text-gray-200 border-gray-400 hover:text-white hover:border-white">
+                    <svg class="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Menu</title><path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/></svg>
+                </button>
+            </div>
+            <div class="hidden w-full block flex-grow lg:flex lg:items-center lg:w-auto">
+                <div class="text-sm lg:flex-grow">
+                    <a href="#features" class="block mt-4 lg:inline-block lg:mt-0 text-gray-200 hover:text-white mr-4">
+                        Features
+                    </a>
+                    <a href="#about" class="block mt-4 lg:inline-block lg:mt-0 text-gray-200 hover:text-white mr-4">
+                        About
+                    </a>
+                    <a href="/docs" class="block mt-4 lg:inline-block lg:mt-0 text-gray-200 hover:text-white">
+                        API Docs
+                    </a>
+                </div>
+                <div>
+                    <a href="/docs" class="inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-gray-800 hover:bg-white mt-4 lg:mt-0">Get Started</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mx-auto px-4 py-12">
+        <!-- Hero Section -->
+        <div class="flex flex-col items-center justify-center text-center py-12">
+            <h1 class="text-5xl font-bold text-gray-800 mb-4">AI-Powered Ride-Sharing</h1>
+            <p class="text-xl text-gray-600 mb-8">The future of transportation, powered by artificial intelligence</p>
+            <div class="flex flex-col sm:flex-row">
+                <a href="#" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mb-2 sm:mb-0 sm:mr-2">
+                    Book a Ride
+                </a>
+                <a href="#" class="bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded">
+                    Become a Driver
+                </a>
+            </div>
+        </div>
+
+        <!-- Features Section -->
+        <div id="features" class="py-12">
+            <h2 class="text-3xl font-bold text-center text-gray-800 mb-8">Key Features</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="bg-white rounded-lg shadow-md p-6">
+                    <div class="text-4xl text-blue-500 mb-4">🤖</div>
+                    <h3 class="text-xl font-semibold mb-2">AI-Powered Matching</h3>
+                    <p class="text-gray-600">Smart algorithms match riders with the best drivers based on location, ratings, and more.</p>
+                </div>
+                <div class="bg-white rounded-lg shadow-md p-6">
+                    <div class="text-4xl text-blue-500 mb-4">💰</div>
+                    <h3 class="text-xl font-semibold mb-2">Dynamic Pricing</h3>
+                    <p class="text-gray-600">Fare estimation based on distance, traffic conditions, and real-time demand.</p>
+                </div>
+                <div class="bg-white rounded-lg shadow-md p-6">
+                    <div class="text-4xl text-blue-500 mb-4">🔒</div>
+                    <h3 class="text-xl font-semibold mb-2">Safety Features</h3>
+                    <p class="text-gray-600">Real-time tracking, SOS button, and route deviation alerts for maximum safety.</p>
+                </div>
+                <div class="bg-white rounded-lg shadow-md p-6">
+                    <div class="text-4xl text-blue-500 mb-4">🌐</div>
+                    <h3 class="text-xl font-semibold mb-2">Real-Time Tracking</h3>
+                    <p class="text-gray-600">Live tracking of rides with accurate ETA predictions using traffic data.</p>
+                </div>
+                <div class="bg-white rounded-lg shadow-md p-6">
+                    <div class="text-4xl text-blue-500 mb-4">💳</div>
+                    <h3 class="text-xl font-semibold mb-2">Wallet System</h3>
+                    <p class="text-gray-600">Secure and convenient in-app wallet for seamless payments and refunds.</p>
+                </div>
+                <div class="bg-white rounded-lg shadow-md p-6">
+                    <div class="text-4xl text-blue-500 mb-4">📊</div>
+                    <h3 class="text-xl font-semibold mb-2">Analytics Dashboard</h3>
+                    <p class="text-gray-600">Comprehensive analytics dashboard for admins to monitor system performance.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- About Section -->
+        <div id="about" class="py-12">
+            <h2 class="text-3xl font-bold text-center text-gray-800 mb-8">About the Project</h2>
+            <div class="bg-white rounded-lg shadow-md p-6">
+                <p class="text-gray-600 mb-4">
+                    This AI-Powered Ride-Sharing System is built using modern technologies including FastAPI for the backend, 
+                    machine learning models for intelligent features, and WebSockets for real-time updates.
+                </p>
+                <p class="text-gray-600 mb-4">
+                    The system uses AI/ML algorithms to optimize ride matching, predict demand, estimate fares, and detect fraud,
+                    providing a seamless and secure experience for both riders and drivers.
+                </p>
+                <p class="text-gray-600">
+                    Check out the <a href="/docs" class="text-blue-500 hover:text-blue-700">API documentation</a> for more details
+                    on how to integrate with the system.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white p-6">
+        <div class="container mx-auto">
+            <div class="flex flex-col md:flex-row justify-between">
+                <div class="mb-6 md:mb-0">
+                    <h3 class="text-lg font-semibold mb-2">🚗 RideShare AI</h3>
+                    <p class="text-gray-400">The future of transportation</p>
+                </div>
+                <div class="grid grid-cols-2 gap-8">
+                    <div>
+                        <h4 class="text-sm font-semibold mb-2">Links</h4>
+                        <ul class="text-gray-400">
+                            <li class="mb-1"><a href="#" class="hover:text-white">Home</a></li>
+                            <li class="mb-1"><a href="#features" class="hover:text-white">Features</a></li>
+                            <li class="mb-1"><a href="#about" class="hover:text-white">About</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="text-sm font-semibold mb-2">API</h4>
+                        <ul class="text-gray-400">
+                            <li class="mb-1"><a href="/docs" class="hover:text-white">Documentation</a></li>
+                            <li class="mb-1"><a href="/redoc" class="hover:text-white">ReDoc</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-8 pt-8 border-t border-gray-700 text-sm text-gray-400 text-center">
+                &copy; 2023 AI-Powered Ride-Sharing System. All rights reserved.
+            </div>
+        </div>
+    </footer>
+</body>
+</html> 

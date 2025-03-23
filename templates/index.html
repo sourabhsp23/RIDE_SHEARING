@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RideShare - Your AI-Powered Ride Sharing Platform</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100">
+    <!-- Navigation -->
+    <nav class="bg-blue-600 text-white p-4">
+        <div class="container mx-auto flex justify-between items-center">
+            <h1 class="text-2xl font-bold">RideShare</h1>
+            <div class="space-x-4">
+                <a href="#" class="hover:underline">Home</a>
+                <a href="#rides" class="hover:underline">Rides</a>
+                <a href="#drivers" class="hover:underline">Drivers</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="bg-blue-500 text-white py-16">
+        <div class="container mx-auto text-center">
+            <h1 class="text-4xl font-bold mb-4">Welcome to RideShare</h1>
+            <p class="text-xl mb-8">The AI-Powered Ride Sharing Platform</p>
+            <button class="bg-white text-blue-500 px-6 py-2 rounded-full font-bold hover:bg-blue-100">Book a Ride</button>
+        </div>
+    </div>
+
+    <!-- Rides Section -->
+    <div id="rides" class="py-12 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-8">Available Rides</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6" id="rides-container">
+                <!-- Rides will be loaded here dynamically -->
+                <p class="text-center col-span-2">Loading rides...</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Drivers Section -->
+    <div id="drivers" class="py-12 bg-gray-100">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-8">Our Top Drivers</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6" id="drivers-container">
+                <!-- Drivers will be loaded here dynamically -->
+                <p class="text-center col-span-2">Loading drivers...</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-blue-800 text-white py-8">
+        <div class="container mx-auto px-4 text-center">
+            <p>&copy; 2025 RideShare. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript to load data -->
+    <script>
+        // Fetch and display rides
+        fetch('/api/rides')
+            .then(response => response.json())
+            .then(rides => {
+                const ridesContainer = document.getElementById('rides-container');
+                ridesContainer.innerHTML = '';
+                
+                rides.forEach(ride => {
+                    const card = document.createElement('div');
+                    card.className = 'bg-white shadow-md rounded-lg p-6 border border-gray-200';
+                    card.innerHTML = `
+                        <div class="flex justify-between items-center mb-4">
+                            <h3 class="text-xl font-bold">Ride #${ride.id}</h3>
+                            <span class="px-3 py-1 rounded text-white ${ride.status === 'completed' ? 'bg-green-500' : 'bg-yellow-500'}">
+                                ${ride.status === 'completed' ? 'Completed' : 'In Progress'}
+                            </span>
+                        </div>
+                        <div class="mb-4">
+                            <p class="text-gray-600">From: <span class="text-black">${ride.from}</span></p>
+                            <p class="text-gray-600">To: <span class="text-black">${ride.to}</span></p>
+                        </div>
+                        <div class="text-right">
+                            <p class="text-xl font-bold text-blue-600">₹${ride.fare}</p>
+                        </div>
+                    `;
+                    ridesContainer.appendChild(card);
+                });
+            });
+
+        // Fetch and display drivers
+        fetch('/api/drivers')
+            .then(response => response.json())
+            .then(drivers => {
+                const driversContainer = document.getElementById('drivers-container');
+                driversContainer.innerHTML = '';
+                
+                drivers.forEach(driver => {
+                    const card = document.createElement('div');
+                    card.className = 'bg-white shadow-md rounded-lg p-6 border border-gray-200 flex items-center';
+                    card.innerHTML = `
+                        <div class="bg-gray-200 w-16 h-16 rounded-full flex items-center justify-center mr-4">
+                            <span class="text-2xl">${driver.name.charAt(0)}</span>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold">${driver.name}</h3>
+                            <div class="flex items-center">
+                                <span class="text-yellow-500 mr-1">★</span>
+                                <span>${driver.rating}/5.0</span>
+                            </div>
+                        </div>
+                    `;
+                    driversContainer.appendChild(card);
+                });
+            });
+    </script>
+</body>
+</html> 
