@@ -103,11 +103,3 @@ Run the tests using:
 pytest
 ```
 
-## 🛡️ License
-
-This project is licensed under the MIT License - see the LICENSE file for details.
-
-## 🙏 Acknowledgments
-
-- FastAPI for the amazing framework
-- The open-source community for all the tools and libraries used in this project 
